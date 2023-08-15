@@ -1,0 +1,78 @@
+fun f1() { 1 }
+fun f2(x) { x }
+fun f3(x,y) { x+y }
+recfun g1() { 4 }
+recfun g2(x) { x+x }
+recfun g3(x,y) { x*y }
+// Logic
+true
+(true)
+true && true
+true || true
+// Comparators (bool)
+false == false
+false != true
+true == true
+false ==> false
+false ==> true
+true ==> true
+!(true ==> false)
+// Comparators (int)
+1 == 1
+1 != 0
+1 <= 1
+1 <= 2
+1 < 2
+2 >= 2
+2 >= 1
+2 > 1
+// Arithmetic
+1+1 == 2
+2+1 == 3
+3-1 == 2
+1*1 == 1
+2*1 == 2
+2/1 == 2
+2/2 == 1
+9/3 == 3
+1%2 == 1
+2%2 == 0
+3%2 == 1
+// Conditionals
+1 == if true { 1 } else { 0 }
+1 == if false { 0 } else { 1 }
+// Invocations
+f1() == 1
+f2(0) == 0
+f2(123) == 123
+f2(2032) == 2032
+f3(0,0) == 0
+f3(1,0) == 1
+f3(0,1) == 1
+f3(1,1) == 2
+f3(2,3) == 5
+g1() == 4
+g2(0) == 0
+g2(1) == 2
+g2(3) == 6
+g3(0,0) == 0
+g3(1,0) == 0
+g3(0,1) == 0
+g3(1,1) == 1
+// Type tests
+0:uint
+(1+1):uint
+// Quantified Assertions
+forall(x) x == x
+forall(x) x:uint ==> x+1 == x+1
+forall(x) x:uint ==> x+1 > 0
+forall(x) x:uint ==> x <= x
+forall(x) x:uint ==> x < x+1
+forall(x) x:uint ==> x*2 == x+x
+forall(x) x:uint ==> if x > 0 { x-1 >= 0 } else { x == 0 }
+forall(x) x:uint ==> if x > 1 { x-1 > 0 } else { x == 0 || x == 1 }
+forall(x,y) (x:uint && y:uint) ==> x+y == x+y
+forall(x,y) (x:uint && y:uint) ==> x+y == y+x
+forall(x,y) (x:uint && y:uint) ==> (x < y || y <= x)
+forall(x,y) ((x:uint && y:uint) && x < y) ==> x != y
+forall(x,y) ((x:uint && y:uint) && x < y) ==> y > 0

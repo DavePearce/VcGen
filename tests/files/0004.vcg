@@ -1,0 +1,12 @@
+recfun gcd(x, y) {
+  if y == 0 { x } else { gcd(y, x%y) }
+}
+gcd(0,0) == 0
+gcd(1,0) == 1
+gcd(0,1) == 1
+gcd(1,1) == 1
+gcd(2,4) == 2
+gcd(3,5) == 1
+gcd(3,15) == 3
+// forall(x) x:uint ==> gcd(2*x,2) == 2
+// forall(x) x:uint ==> gcd(3*x,3) == 3

@@ -1,0 +1,10 @@
+recfun sum(n) {
+  if n == 0 { 0 } else { n + sum(n-1) }
+}
+sum(0) == 0
+sum(1) == 1
+sum(2) == 3
+sum(3) == 6
+// forall(n) n:uint ==> (n*(n+1)) % 2 == 0
+// forall(n) n:uint ==> 2*sum(n) == n*(n+1)
+// forall(n) n:uint ==> sum(n) == (n*(n+1))/2
