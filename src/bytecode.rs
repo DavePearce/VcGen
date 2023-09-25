@@ -1,15 +1,7 @@
 #[derive(Clone,Debug,PartialEq)]
 pub enum Bytecode {
-    // Declarations
-    Assert,
-    Fun(usize),
-    RecFun(usize),
-    // Logical
-    Not,
-    And,
-    Or,
-    Implies,
-    HasType,
+    // Literals
+    Push1(u8),
     // Comparators
     Eq,
     Neq,
@@ -23,14 +15,6 @@ pub enum Bytecode {
     Mul,
     Div,
     Rem,
-    // Other
-    If,
-    Invoke(usize,usize),
-    // Literals
-    Int(usize),
-    Bool(bool),
-    Var(usize),
-    // Type Tests
-    IsUint,
-    IsBool
+    // Control-Flow
+    Fail
 }
