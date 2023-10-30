@@ -1,7 +1,5 @@
-mod bytecode;
-mod lexer;
-mod parser;
 mod machine;
+mod words;
 
-pub use bytecode::*;
-pub use parser::Parser;
+pub use machine::*;
+pub use words::*;

@@ -5,6 +5,3 @@ edition = "2021"
 license = "Apache-2.0"
 description = "Utilities for manipulating verification conditions."
 repository = "https://github.com/DavePearce/VcGen"
-
-[[bin]]
-name = "vcgc"

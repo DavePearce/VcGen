@@ -21,7 +21,7 @@ pub trait Machine {
     /// Get the instruction at a given position in the instruction
     /// stream.  Observe that this is _unbounded_.  That is, we assume
     /// an instruction exists at every possible `pc` offset.
-    fn get(pc: usize) -> Instruction;
+    fn get(&self, pc: usize) -> &Self::Instruction;
     
     /// Execute a given state producing zero (or more) states.  No
     /// states are produced if the given instruction is terminating
@@ -62,7 +62,7 @@ pub trait MachineState {
     fn swap(&mut self, n: usize);
 
     /// Set position within instruction sequence.
-    fn goto(&mut self, pc: usize);    
+    fn goto(&mut self, pc: usize);
 }
 
 /// Represents the fundamental unit of computation within a stack
